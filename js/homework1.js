@@ -89,7 +89,47 @@ function replaceLetters(str){
 // given array are arrays.
 
 
+function productOfNegatives(array) {
 
+    if(array.length == 0) {
+        console.log('Invalid Arguement');
+        return ;
+    }
+
+    let result = undefined;
+    let isResultInit = false;
+
+    for(let i = 0; i < array.length; i++) {
+        if(!Array.isArray(array[i])) {
+            console.log('Invalid Arguement')
+            return ;
+        }
+
+        tempArray = array[i];
+        let maxNegative = 0;
+
+        for(let j = 0; j < tempArray.length; j++) {
+            if(tempArray[j] < 0) {
+                if(maxNegative == 0 || maxNegative < tempArray[j]) {
+                    maxNegative = tempArray[j];
+                }
+            }
+        }
+
+        if(maxNegative != 0) {
+            if(!isResultInit) {    
+                result = 1;           
+                isResultInit = true;   
+            }
+            result *= maxNegative;
+        }
+    }
+
+    if(result == undefined) {
+        return "No negatives";
+    }
+    console.log(result);
+}
 
 
 // 6. Write a JavaScript function to get all possible subsets of length 3 of the given array.
