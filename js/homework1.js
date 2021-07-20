@@ -72,11 +72,10 @@ function replaceLetters(str){
     let temp = '';
 
     for (let i = 0; i < str.length; i+=3){
-        if (i + 3 > str.length){
-            break;
+        if (i + 2 < str.length){
+          result += str.substring(i, i+3);
         } else {
-            result += str.charAt(i+1) + str.charAt(i+2) + str.charAt(i);
-
+            result += str.substring(i);
         }
     }
     console.log(result);
