@@ -75,7 +75,7 @@ function replaceLetters(str){
         if (i + 3 > str.length){
             break;
         } else {
-            result += str.substring(i, i+3).split('').reverse().join('');
+            result += str.charAt(i+1) + str.charAt(i+2) + str.charAt(i);
 
         }
     }
