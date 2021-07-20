@@ -70,7 +70,6 @@ function longestUniqueSubstring(string) {
 function replaceLetters(str){
     let result = '';
     let temp = '';
-    let newStr = '';
 
     for (let i = 0; i < str.length; i+=3){
         if (i + 3 > str.length){
